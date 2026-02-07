@@ -9,6 +9,9 @@
   "categories": [
     "Other"
   ],
+  "extensionDependencies": [
+    "sumneko.lua-language-server"
+  ],
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {

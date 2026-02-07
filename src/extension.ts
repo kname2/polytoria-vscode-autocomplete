@@ -10,15 +10,22 @@ export function activate(context: vscode.ExtensionContext) {
 			let completionItems = undefined;
 			const prefix = document.lineAt(position).text.substring(0,position.character);
 
+			// VARIABLE RECOGNITION
+			
+
 			// MAIN CLASSES, STATIC CLASSES, AND CONSTRUCTORS
-			const bigPolyList: string[] = [
-				"Achievements", "Chat", "Color", "ColorRange", "CoreUI", "Datastore", "game",
-				"Http", "Input", "Insert", "Json", "NumberRange", "Tween", "Vector2", "Vector3"
+			const polyStaticsAndClasses: string[] = [
+				"Achievements", "Chat", "CoreUI", "Datastore", "game",
+				"Http", "Input", "Insert", "Json", "Tween"
+			]
+			const polyConstructors: string[] = [
+				"Color", "ColorRange", "NetMessage", "NumberRange",
+				"Vector2", "Vector3"
 			]
 
 			if (prefix.trim().length == 1) {
 				let alliterativeList: string[] = []
-				for (const pClass of bigPolyList) {
+				for (const pClass of polyStaticsAndClasses) {
 					if (prefix.trim().toLowerCase == pClass.substring(0,0).toLowerCase) {
 						alliterativeList.push(pClass)
 					}
@@ -43,7 +50,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			// PROPERTIES
-			if (prefix.endsWith('game.')) {
+			if (prefix.endsWith('game.') || prefix.endsWith('game[')) {
 				const startPosition = new vscode.Position(position.line, position.character - 1);
 				const repRange = new vscode.Range(startPosition, position);
 
@@ -77,6 +84,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 				return completionItems
 			};
+			if (prefix.endsWith('["Eviroment"].') || prefix.endsWith('["Eviroment"][')) {
+				
+			}
 
 			// EVENTS
 			const polyEvents: string[] = [
