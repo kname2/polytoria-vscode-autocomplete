@@ -3,6 +3,7 @@
   "displayName": "Polytoria VSCode Autocomplete",
   "description": "Autocomplete for polytoria",
   "version": "0.0.1",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.109.0"
   },
