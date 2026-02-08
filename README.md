@@ -6,7 +6,7 @@ Autocomplete built for Visual Studio Code and the Polytoria workspace.
 
 ## Requirements
 
-[Lua Language Server!!](https://marketplace.visualstudio.com/items?itemName=Hawli.polytoria-lua-snippets)
+[Lua Language Server!!](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)
 
 ## Release Notes
 
